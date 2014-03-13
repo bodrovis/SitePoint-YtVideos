@@ -1,1 +1,37 @@
 @import "bootstrap";
+@import "bootstrap/theme";
+
+.yt_video {
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 320px;
+  position: relative;
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  img {cursor: pointer;}
+
+  .yt_duration {
+    position: absolute;
+    top: 150px;
+    right: 13px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .yt_duration_overlay {
+    position: absolute;
+    opacity: 0.5;
+    width: 60px;
+    height: 20px;
+    background-color: #000;
+    top: 150px;
+    right: 11px;
+    cursor: pointer;
+  }
+
+  .glyphicon-thumbs-down {margin-left: 20px;}
+}

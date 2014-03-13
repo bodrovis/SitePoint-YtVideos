@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 gem 'rails', '3.2.17'
 
 # Bundle edge Rails instead:
@@ -7,10 +7,13 @@ gem 'rails', '3.2.17'
 
 group :development do
   gem 'sqlite3'
+  gem 'pry-rails'
+  gem 'annotate'
 end
 
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 
 # Gems used only for assets and not required
@@ -26,9 +29,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'youtube_it'
-gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

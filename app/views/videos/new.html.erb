@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>New video</h1>
+
+  <%= form_for @video do |f| %>
+    <%= render 'shared/errors', object: @video %>
+
+    <div class="form-group">
+      <%= f.label :link %>
+      <%= f.text_field :link, class: 'form-control', required: true %>
+      <span class="help-block">A link to the video on YouTube.</span>
+    </div>
+
+    <%= f.submit class: 'btn btn-default' %>
+  <% end %>
+</div>

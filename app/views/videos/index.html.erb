@@ -1,1 +1,35 @@
-fdsfdsf
+<div class="jumbotron">
+  <div class="container">
+    <h1>Share your videos with the world!</h1>
+    <p>Click the button below to share your video from YouTube.</p>
+    <p>
+      <%= link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+</div>
+
+<% if @videos.any? %>
+  <div class="container">
+    <h1>Latest videos</h1>
+
+    <div id="player-wrapper"></div>
+
+    <% @videos.each do |video| %>
+      <div class="yt_video thumbnail">
+        <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview',
+                      :"data-uid" => video.uid %>
+        <div class="yt_duration_overlay"></div>
+        <div class="yt_duration"><%= video.duration %></div>
+
+        <div class="caption">
+          <h5><%= video.title %></h5>
+          <p><small>Author: <b><%= video.author %></b></small></p>
+          <p>
+            <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> <%= video.likes %>
+            <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
