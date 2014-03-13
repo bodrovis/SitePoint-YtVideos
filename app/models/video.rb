@@ -27,13 +27,15 @@ class Video < ActiveRecord::Base
     if self.uid.to_s.length != 11
       self.errors.add(:link, 'is invalid.')
       false
+    elsif Video.where(uid: self.uid).any?
+      self.errors.add(:link, 'is not unique.')
+      false
     else
       get_additional_info
     end
   end
 
   validates :link, presence: true, format: YT_LINK_FORMAT
-  validates :uid, uniqueness: true
 
   private
 

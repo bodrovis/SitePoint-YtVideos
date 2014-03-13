@@ -33,6 +33,11 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (3.0.3)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     builder (3.0.4)
@@ -47,6 +52,7 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     daemons (1.1.9)
+    debug_inspector (0.0.2)
     erubis (2.7.0)
     eventmachine (1.0.3-x86-mingw32)
     excon (0.32.1)
@@ -159,6 +165,8 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  better_errors
+  binding_of_caller
   bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 3.2.1)
   jquery-rails

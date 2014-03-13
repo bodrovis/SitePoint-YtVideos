@@ -1,5 +1,5 @@
 jQuery ->
-  $('.yt_duration_overlay, yt_duration').click -> $(this).sibling('.yt_preview')
+  $('.yt_duration_overlay, .yt_duration').click -> $(this).siblings('.yt_preview').click()
 
   $('.yt_preview').click -> makeVideoPlayer $(this).data('uid')
 
