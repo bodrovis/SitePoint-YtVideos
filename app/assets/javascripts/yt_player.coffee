@@ -1,6 +1,4 @@
 jQuery ->
-  $('.yt_duration_overlay, .yt_duration').click -> $(this).siblings('.yt_preview').click()
-
   $('.yt_preview').click -> makeVideoPlayer $(this).data('uid')
 
   # Initially the player is not loaded
@@ -13,7 +11,7 @@ jQuery ->
 
   $(window).bindWithDelay('resize', ->
     player = $('#ytPlayer')
-    player.height(player.width() / 1.777777777 if player.size() > 0)
+    player.height(player.width() / 1.777777777) if player.size() > 0
     return
   , 500)
 
@@ -26,12 +24,10 @@ jQuery ->
         width: '100%'
         height: player_wrapper.width() / 1.777777777
         videoId: video
-        wmode: 'opaque'
         playerVars: {
           wmode: 'opaque'
           autoplay: 0
           modestbranding: 1
-          scale: "noScale"
         }
         events: {
           'onReady': -> window.ytPlayerLoaded = true
@@ -39,9 +35,8 @@ jQuery ->
         }
       })
     else
-      if window.ytPlayerLoaded
-        window.ytplayer.loadVideoById(video)
-        window.ytplayer.pauseVideo()
+      window.ytplayer.loadVideoById(video)
+      window.ytplayer.pauseVideo()
     return
 
   google.setOnLoadCallback _run

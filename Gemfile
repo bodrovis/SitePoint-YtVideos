@@ -32,8 +32,8 @@ end
 
 gem 'jquery-rails'
 
-gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'youtube_it'
+gem 'bootstrap-sass', '~> 3.1.1.0'
+gem 'youtube_it', '~> 2.4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
